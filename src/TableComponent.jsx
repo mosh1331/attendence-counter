@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
+import SearchBar from './Searchbar'
 const TableComponent = ({ data , highlight, setHighlight , selected ,onSelect, handleSearch }) => {
  
 
@@ -41,11 +42,12 @@ const TableComponent = ({ data , highlight, setHighlight , selected ,onSelect, h
       <div onClick={()=>setHighlight(prev => !prev)} className='absolute bottom-[40px] right-[0px] w-24 h-12 grid place-items-center bg-[tomato] border-1 border-[black] rounded-tl-[10px] rounded-bl-[10px] text-[white] font-bold'>
         {selected.length}/{data.length}
       </div>
-      <input type="text" placeholder="Search..." autocomplete="off"
+      <SearchBar handleSearch={handleSearch} />
+      {/* <input name='search' type="text" placeholder="Search..." autocomplete="off"
        class="absolute bottom-[100px] right-[0px] rounded-md bg-gray-400 border-gray-200
        border-2 text-gray-800 p-1 w-[20px] h-[20px] focus:bg-white
        focus:flex-1 focus:pr-12
-       transition-all duration-500 transform focus:w-64 focus:h-12"  onChange={handleSearch}/>
+       transition-all duration-500 transform focus:w-64 focus:h-12"  onChange={handleSearch}/> */}
     </div>
   )
 }

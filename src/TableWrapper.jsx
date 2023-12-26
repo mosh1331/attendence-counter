@@ -27,9 +27,15 @@ const TableWrapper = () => {
     } else {
       setData(jsonData)
     }
-
+    scrollToTop()
   }
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // For smooth scrolling behavior
+    });
+  };
 
   useEffect(() => {
     const storedArray = localStorage.getItem('selectedArray')
