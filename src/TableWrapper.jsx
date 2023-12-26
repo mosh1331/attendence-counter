@@ -17,8 +17,7 @@ const TableWrapper = () => {
     setSelected(arr)
   }
 
-  const handleSearch = e => {
-    const searchTerm = e.target.value
+  const handleSearch = searchTerm => {
     // Search function
     const filteredData = data.filter(item =>
       item.Name.toLowerCase().includes(searchTerm.toLowerCase())) // Sorting the filtered data by name
